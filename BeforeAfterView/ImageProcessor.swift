@@ -51,10 +51,8 @@ class ImageProcessor: ObservableObject {
             let filteredImage = self.filterImageMono(resizedImage)
             
             DispatchQueue.main.async {
-                withAnimation {
-                    self.before = self.loadFilteredImage(resizedImage)
-                    self.after = self.loadFilteredImage(filteredImage)
-                }
+                self.before = self.loadFilteredImage(resizedImage)
+                self.after = self.loadFilteredImage(filteredImage)
             }
         }
     }
