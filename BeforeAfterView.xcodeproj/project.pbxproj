@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		672EF34625CA213600509729 /* ImageSplitPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672EF34525CA213600509729 /* ImageSplitPreview.swift */; };
+		672EF34A25CA21C300509729 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672EF34925CA21C300509729 /* ImageProcessor.swift */; };
 		6787889525C9D4CB003372E9 /* BeforeAfterViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6787889425C9D4CB003372E9 /* BeforeAfterViewApp.swift */; };
 		6787889725C9D4CB003372E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6787889625C9D4CB003372E9 /* ContentView.swift */; };
 		6787889925C9D4CD003372E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6787889825C9D4CD003372E9 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		672EF34525CA213600509729 /* ImageSplitPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSplitPreview.swift; sourceTree = "<group>"; };
+		672EF34925CA21C300509729 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		6787889125C9D4CB003372E9 /* BeforeAfterView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeforeAfterView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6787889425C9D4CB003372E9 /* BeforeAfterViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeAfterViewApp.swift; sourceTree = "<group>"; };
 		6787889625C9D4CB003372E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				6787889425C9D4CB003372E9 /* BeforeAfterViewApp.swift */,
 				6787889625C9D4CB003372E9 /* ContentView.swift */,
+				672EF34525CA213600509729 /* ImageSplitPreview.swift */,
+				672EF34925CA21C300509729 /* ImageProcessor.swift */,
 				6787889825C9D4CD003372E9 /* Assets.xcassets */,
 				6787889D25C9D4CD003372E9 /* Info.plist */,
 				6787889A25C9D4CD003372E9 /* Preview Content */,
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6787889725C9D4CB003372E9 /* ContentView.swift in Sources */,
+				672EF34625CA213600509729 /* ImageSplitPreview.swift in Sources */,
+				672EF34A25CA21C300509729 /* ImageProcessor.swift in Sources */,
 				6787889525C9D4CB003372E9 /* BeforeAfterViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
