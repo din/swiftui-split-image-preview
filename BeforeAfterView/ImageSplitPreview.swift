@@ -46,8 +46,8 @@ private struct ImageMask: View {
 }
 
 struct ImageSplitPreview: View {
-    let beforeImage: UIImage
-    let afterImage: UIImage
+    let beforeImage: UIImage?
+    let afterImage: UIImage?
     
     @State private var dividerPosition: CGFloat = 0.5
     
@@ -55,32 +55,47 @@ struct ImageSplitPreview: View {
         return CGFloat.minimum(max, CGFloat.maximum(n, min))
     }
     
+    var overlay: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Image(uiImage: beforeImage ?? UIImage())
+                    .resizable()
+                    .scaledToFit()
+                    .mask(
+                        ImageMask(containerWidth: geometry.size.width, dividerPosition: dividerPosition)
+                    )
+                
+                ImageDivider(containerWidth: geometry.size.width, dividerPosition: dividerPosition)
+                    .gesture(DragGesture()
+                        .onChanged({ value in
+                            self.dividerPosition = clamp(value.location.x / geometry.size.width)
+                        })
+                )
+                
+            }
+        }
+    }
+    
     var body: some View {
         ZStack {
-            Image(uiImage: afterImage)
-                .resizable()
-                .scaledToFit()
-                .overlay(
-                    GeometryReader { geometry in
-                        ZStack(alignment: .leading) {
-                            Image(uiImage: beforeImage)
-                                .resizable()
-                                .scaledToFit()
-                                .mask(
-                                    ImageMask(containerWidth: geometry.size.width, dividerPosition: dividerPosition)
-                                )
-                            
-                            ImageDivider(containerWidth: geometry.size.width, dividerPosition: dividerPosition)
-                                .gesture(DragGesture()
-                                    .onChanged({ value in
-                                        self.dividerPosition = clamp(value.location.x / geometry.size.width)
-                                    })
-                                )
-                            
-                        }
-                    }
-                )
+            if beforeImage != nil && afterImage != nil {
+                Image(uiImage: afterImage ?? UIImage())
+                    .resizable()
+                    .scaledToFit()
+                    .overlay(
+                        overlay
+                    )
+            } else {
+                ProgressView()
+            }
             
         }
     }
 }
+
+struct ImageSplitPreview_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageSplitPreview(beforeImage: nil, afterImage: nil)
+    }
+}
+

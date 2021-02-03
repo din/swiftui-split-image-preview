@@ -10,7 +10,7 @@ import SwiftUI
 private let previewImage = UIImage(imageLiteralResourceName: "preview_01")
 
 struct ContentView: View {
-    private let images = ImageProcessor(previewImage)
+    @ObservedObject private var images = ImageProcessor(previewImage)
     
     var body: some View {
         VStack(spacing: 16.0) {
